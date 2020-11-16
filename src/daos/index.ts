@@ -13,6 +13,9 @@ export class DB {
   private models: IModels;
 
 
+  /**
+   * Initiating Mongo Connection here
+   */
   constructor() {
   	try {
   		connect(process.env.MONGO_URL as string, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -26,7 +29,7 @@ export class DB {
   	this.models = { Product: new Product().model };
   }
 
-  public static get Models() {
+  public static get Models(): any {
   	if (!DB.instance) {
   		DB.instance = new DB();
   	}

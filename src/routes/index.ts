@@ -1,11 +1,17 @@
 import { Router } from 'express';
 import ProductRouter from './Product';
 
-// Init router and path
+/**
+ * Init router and path
+ */
 const router = Router();
 
-// Add sub-routes
+/**
+ * Adding product sub-routes
+ */
 router.use('/product', ProductRouter);
 
-// Export the base-router
+/**
+ * Export the base-router
+ */
 export default router;

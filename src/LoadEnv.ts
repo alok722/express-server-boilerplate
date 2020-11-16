@@ -1,6 +1,8 @@
 import dotenv from 'dotenv';
 
-// Set the env file
+/**
+ * Set Env file
+ */
 const result = dotenv.config({
 	path: './env/development.env',
 });

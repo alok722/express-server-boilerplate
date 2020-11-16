@@ -13,7 +13,9 @@ export class ProductDao implements IProductDao {
 
 
 	/**
-	 * @param id
+	 * Making DB call to get one product
+	 * @param {string} _id - Id of product.
+	 * @return {Promise<IProduct | null>} data[0]
 	 */
 	public async getOne(_id: string): Promise<IProduct | null> {
 		try {
@@ -29,7 +31,8 @@ export class ProductDao implements IProductDao {
 
 
 	/**
-	 *
+	 * Making DB call to get all products
+	 * @return {Promise<IProduct[] | null>} data
 	 */
 	public async read(): Promise<IProduct[]> {
 		try {
@@ -42,8 +45,9 @@ export class ProductDao implements IProductDao {
 
 
 	/**
-	 *
-	 * @param product
+	 * Making DB call to add product
+	 * @param {IProduct} product product to add
+	 * @return {Promise<IProduct>} newProduct
 	 */
 	public async add(product: IProduct): Promise<IProduct> {
 		try {
@@ -56,8 +60,10 @@ export class ProductDao implements IProductDao {
 
 
 	/**
-	 * @param product
-	 * @param _id
+	 * Making DB call to update data
+	 * @param {string} _id - Id of product.
+	 * @param {IProduct} product product to update
+	 * @return {Promise<IProduct>} data
 	 */
 	public async update(_id: string, product: IProduct): Promise<IProduct> {
 		try {
@@ -70,8 +76,9 @@ export class ProductDao implements IProductDao {
 
 
 	/**
-	 *
-	 * @param id
+	 * Making DB call to delete data
+	 * @param {string} _id - Id of product.
+	 * @return {Promise<void>}
 	 */
 	public async delete(_id: string): Promise<void> {
 		try {

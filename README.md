@@ -1,6 +1,6 @@
 <h1 align="center">welcome to express-server-boilerplate 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-1.1.0-blue.svg?cacheSeconds=2592000" />
   <img alt="Maintenance" src="https://img.shields.io/badge/Maintained-yes-blue.svg" />
   <a href="https://github.com/alok722/express-server-boilerplate/blob/main/LICENSE" target="_blank">
     <img alt="Licence" src="https://img.shields.io/badge/License-MIT-blue.svg" />
@@ -27,7 +27,8 @@ happy backend-deving 😊
 
 ## 📝 highlight
 
-It includes documentation of available routes using swagger. visit ```localhost:3000\api-docs``` after localhost setup.
+* It includes swagger documentation of all available routes to test without need of Postman. visit ```localhost:3000\api-docs``` after localhost setup.
+* It also includes typedoc documentation which can be viewed at ```/docs/index.html```
 
 happy backend-deving 😊
 

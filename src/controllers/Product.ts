@@ -4,6 +4,9 @@ import { ProductDao } from '../daos';
 const productDao = new ProductDao();
 
 module.exports = {
+	/**
+	 * Controller to get all products
+	 */
 	get: async (req: Request, res: Response, next: any) => {
 		try {
 			const products = await productDao.read();
@@ -13,6 +16,9 @@ module.exports = {
 		}
 	},
 
+	/**
+	 * Controller to get product by Id
+	 */
 	getById: async (req: Request, res: Response, next: any) => {
 		try {
 			const { _id } = req.params;
@@ -27,6 +33,9 @@ module.exports = {
 		}
 	},
 
+	/**
+	 * Controller to create product
+	 */
 	create: async (req: Request, res: Response, next: any) => {
 		try {
 			const data = await productDao.add(req.body);
@@ -36,6 +45,9 @@ module.exports = {
 		}
 	},
 
+	/**
+	 * Controller to update product by Id
+	 */
 	updateById: async (req: Request, res: Response, next: any) => {
 		try {
 			const { _id } = req.params;
@@ -46,6 +58,9 @@ module.exports = {
 		}
 	},
 
+	/**
+	 * Controller to delete product by Id
+	 */
 	deleteById: async (req: Request, res: Response, next: any) => {
 		try {
 			const { _id } = req.params;

@@ -1,13 +1,13 @@
 {
   "name": "express-server-generator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "start:dev": "nodemon",
     "start": "node -r module-alias/register ./dist --env=developement",
     "build": "node build.js",
     "lint": "tslint --project \"tsconfig.json\"",
     "test": "jest --testTimeout=10000",
-    "generate-documentation": "typedoc --tsconfig ./tsconfig.json"
+    "generate-doc": "typedoc --tsconfig ./tsconfig.json"
   },
   "nodemonConfig": {
     "watch": [

@@ -6,34 +6,45 @@ import BaseRouter from './routes';
 import swaggerUi from 'swagger-ui-express';
 import * as swaggerDocument from './swagger.json';
 
-// Init express
+/**
+ * Init express
+ */
 const app = express();
 
-
-/************************************************************************************
- *                              Set basic express settings
- ***********************************************************************************/
-
+/**
+ * Set basic express settings
+ */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// Show routes called in console during development
+/**
+ * Display routes called in console during development
+ */
 if (process.env.NODE_ENV === 'development') {
 	app.use(morgan('dev'));
 }
 
-// Security
+/**
+ * Security
+ */
 if (process.env.NODE_ENV === 'production') {
 	app.use(helmet());
 }
 
-// Add APIs
+/**
+ * Prefix /api to base route
+ */
 app.use('/api', BaseRouter);
 
+/**
+ * swagger api {/api-docs}
+ */
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// Print API errors
+/**
+ * Handle API errors
+ */
 app.use((req: Request, res: Response, next) => {
 	const err: any = new Error('Not Found');
 	err.status = 404;
@@ -45,5 +56,7 @@ app.use((err: any, req: Request, res: Response, next: any) => {
 	else res.status(500).json({ message: 'Something looks wrong :( !!!' });
 });
 
-// Export express instance
+/**
+ * Export express instance
+ */
 export default app;
